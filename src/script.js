@@ -29,21 +29,30 @@ scene.add(pointLight)
 /**
  * Objects
  */
-const dieSize = 1;
+const dieWidth = 1;
+const dieSides = 6;
+
+// Geometries
+const planeGeometry = new THREE.PlaneGeometry(dieWidth, dieWidth)
 
 // Material
-const material = new THREE.MeshStandardMaterial()
-material.roughness = 0.4
+const material = new THREE.MeshBasicMaterial();
+// material.roughness = 0.4
 
 // Objects
-const plane = new THREE.Mesh(
-    new THREE.PlaneGeometry(dieSize, dieSize),
-    material
-)
-plane.rotation.x = - Math.PI * 0.5
-plane.position.y = - 0.65
+// for (let i = 0; i < dieSides; i++) {
+//   const dieSide = new THREE.Mesh(planeGeometry, material);
+// }
+const dieSide1 = new THREE.Mesh(planeGeometry, material);
+const dieSide2 = new THREE.Mesh(planeGeometry, material);
+const dieSide3 = new THREE.Mesh(planeGeometry, material);
+const dieSide4 = new THREE.Mesh(planeGeometry, material);
+const dieSide5 = new THREE.Mesh(planeGeometry, material);
+const dieSide6 = new THREE.Mesh(planeGeometry, material);
+dieSide1.position.y = - dieWidth;
+dieSide1.rotation.x = - Math.PI * 0.5
 
-scene.add(plane)
+scene.add(dieSide1)
 
 /**
  * Sizes
@@ -73,7 +82,7 @@ window.addEventListener('resize', () =>
  */
 // Base camera
 const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 100)
-camera.position.x = 1
+// camera.position.x = 1
 camera.position.y = 1
 camera.position.z = 2
 scene.add(camera)
