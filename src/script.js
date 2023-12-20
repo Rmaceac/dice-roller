@@ -27,20 +27,23 @@ pointLight.position.z = 4
 scene.add(pointLight)
 
 /**
- * Objects
+ * OBJECTS
  */
+// Constants
+const floorWidth = 10;
 const dieWidth = 1;
 const dieSides = 6;
 
+/**
+ * Dice
+ */
 // Geometries
 const planeGeometry = new THREE.PlaneGeometry(dieWidth, dieWidth)
 
-// Material
+// Materials
 const material = new THREE.MeshBasicMaterial();
-// material.side = THREE.DoubleSide;
 
 // Constructing the die out of individual Planes
-
 const die = new THREE.Group();
 
 const dieSide1 = new THREE.Mesh(planeGeometry, new THREE.MeshBasicMaterial({ color: 'red'}));
@@ -50,7 +53,6 @@ const dieSide4 = new THREE.Mesh(planeGeometry, new THREE.MeshBasicMaterial({ col
 const dieSide5 = new THREE.Mesh(planeGeometry, new THREE.MeshBasicMaterial({ color: 'cyan'}));
 const dieSide6 = new THREE.Mesh(planeGeometry, new THREE.MeshBasicMaterial({ color: 'orange'}));
 
-// dieSide1.position.y = - dieWidth;
 dieSide1.rotation.x = Math.PI * 0.5;
 
 dieSide2.position.y = dieWidth * 0.5;
@@ -74,6 +76,17 @@ dieSide6.rotation.x = - Math.PI * 0.5;
 die.add(dieSide1, dieSide2, dieSide3, dieSide4, dieSide5, dieSide6);
 
 scene.add(die);
+
+/**
+ * Floor
+ */
+
+const floor = new THREE.Mesh(new THREE.PlaneGeometry(floorWidth, floorWidth), material);
+
+floor.position.y = -1;
+floor.rotation.x = - Math.PI * 0.5
+
+scene.add(floor);
 
 /**
  * Sizes
@@ -104,7 +117,7 @@ window.addEventListener('resize', () =>
 // Base camera
 const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 100)
 // camera.position.x = 1
-camera.position.y = 1
+camera.position.y = 2.5
 camera.position.z = 2
 scene.add(camera)
 
