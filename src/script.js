@@ -37,7 +37,7 @@ const planeGeometry = new THREE.PlaneGeometry(dieWidth, dieWidth)
 
 // Material
 const material = new THREE.MeshBasicMaterial();
-// material.roughness = 0.4
+// material.side = THREE.DoubleSide;
 
 // Objects
 // for (let i = 0; i < dieSides; i++) {
@@ -53,15 +53,27 @@ const dieSide5 = new THREE.Mesh(planeGeometry, material);
 const dieSide6 = new THREE.Mesh(planeGeometry, material);
 
 dieSide1.position.y = - dieWidth;
-dieSide1.rotation.x = - Math.PI * 0.5;
+dieSide1.rotation.x = Math.PI * 0.5;
 
 dieSide2.position.y = - dieWidth * 0.5;
 dieSide2.position.z = - dieWidth * 0.5;
+dieSide2.rotation.y = Math.PI;
 
 dieSide3.position.y = - dieWidth * 0.5;
 dieSide3.position.z = dieWidth * 0.5;
 
-die.add(dieSide1, dieSide2, dieSide3);
+dieSide4.position.y = - dieWidth * 0.5;
+dieSide4.position.x = - dieWidth * 0.5;
+dieSide4.rotation.y = - Math.PI * 0.5;
+
+dieSide5.position.y = - dieWidth * 0.5;
+dieSide5.position.x = dieWidth * 0.5;
+dieSide5.rotation.y = Math.PI * 0.5;
+
+// dieSide6.position.y = dieWidth * 0.5;
+dieSide6.rotation.x = - Math.PI * 0.5;
+
+die.add(dieSide1, dieSide2, dieSide3, dieSide4, dieSide5, dieSide6);
 
 scene.add(die);
 
