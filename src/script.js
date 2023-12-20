@@ -39,10 +39,8 @@ const planeGeometry = new THREE.PlaneGeometry(dieWidth, dieWidth)
 const material = new THREE.MeshBasicMaterial();
 // material.side = THREE.DoubleSide;
 
-// Objects
-// for (let i = 0; i < dieSides; i++) {
-//   const dieSide = new THREE.Mesh(planeGeometry, material);
-// }
+// Constructing the die out of individual Planes
+
 const die = new THREE.Group();
 
 const dieSide1 = new THREE.Mesh(planeGeometry, material);
@@ -70,7 +68,6 @@ dieSide5.position.y = - dieWidth * 0.5;
 dieSide5.position.x = dieWidth * 0.5;
 dieSide5.rotation.y = Math.PI * 0.5;
 
-// dieSide6.position.y = dieWidth * 0.5;
 dieSide6.rotation.x = - Math.PI * 0.5;
 
 die.add(dieSide1, dieSide2, dieSide3, dieSide4, dieSide5, dieSide6);
