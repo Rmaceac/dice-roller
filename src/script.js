@@ -43,12 +43,12 @@ const material = new THREE.MeshBasicMaterial();
 
 const die = new THREE.Group();
 
-const dieSide1 = new THREE.Mesh(planeGeometry, material);
-const dieSide2 = new THREE.Mesh(planeGeometry, material);
-const dieSide3 = new THREE.Mesh(planeGeometry, material);
-const dieSide4 = new THREE.Mesh(planeGeometry, material);
-const dieSide5 = new THREE.Mesh(planeGeometry, material);
-const dieSide6 = new THREE.Mesh(planeGeometry, material);
+const dieSide1 = new THREE.Mesh(planeGeometry, new THREE.MeshBasicMaterial({ color: 'red'}));
+const dieSide2 = new THREE.Mesh(planeGeometry, new THREE.MeshBasicMaterial({ color: 'blue'}));
+const dieSide3 = new THREE.Mesh(planeGeometry, new THREE.MeshBasicMaterial({ color: 'green'}));
+const dieSide4 = new THREE.Mesh(planeGeometry, new THREE.MeshBasicMaterial({ color: 'indigo'}));
+const dieSide5 = new THREE.Mesh(planeGeometry, new THREE.MeshBasicMaterial({ color: 'cyan'}));
+const dieSide6 = new THREE.Mesh(planeGeometry, new THREE.MeshBasicMaterial({ color: 'orange'}));
 
 dieSide1.position.y = - dieWidth;
 dieSide1.rotation.x = Math.PI * 0.5;
