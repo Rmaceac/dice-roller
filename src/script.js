@@ -43,16 +43,27 @@ const material = new THREE.MeshBasicMaterial();
 // for (let i = 0; i < dieSides; i++) {
 //   const dieSide = new THREE.Mesh(planeGeometry, material);
 // }
+const die = new THREE.Group();
+
 const dieSide1 = new THREE.Mesh(planeGeometry, material);
 const dieSide2 = new THREE.Mesh(planeGeometry, material);
 const dieSide3 = new THREE.Mesh(planeGeometry, material);
 const dieSide4 = new THREE.Mesh(planeGeometry, material);
 const dieSide5 = new THREE.Mesh(planeGeometry, material);
 const dieSide6 = new THREE.Mesh(planeGeometry, material);
-dieSide1.position.y = - dieWidth;
-dieSide1.rotation.x = - Math.PI * 0.5
 
-scene.add(dieSide1)
+dieSide1.position.y = - dieWidth;
+dieSide1.rotation.x = - Math.PI * 0.5;
+
+dieSide2.position.y = - dieWidth * 0.5;
+dieSide2.position.z = - dieWidth * 0.5;
+
+dieSide3.position.y = - dieWidth * 0.5;
+dieSide3.position.z = dieWidth * 0.5;
+
+die.add(dieSide1, dieSide2, dieSide3);
+
+scene.add(die);
 
 /**
  * Sizes
