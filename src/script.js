@@ -87,6 +87,14 @@ dieSide6.rotation.x = - Math.PI * 0.5;
 
 die.add(dieSide1, dieSide2, dieSide3, dieSide4, dieSide5, dieSide6);
 
+// die.rotation.y = Math.PI; // Ice
+// die.rotation.y = Math.PI * 0.5; // Earth
+// die.rotation.y = Math.PI * 2; // Shock
+// die.rotation.y = - Math.PI * 0.5; // Death
+// die.rotation.x = Math.PI * 0.5; // Magic
+// die.rotation.x = - Math.PI * 0.5; // Fire
+
+
 scene.add(die);
 
 /**
