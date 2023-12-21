@@ -94,7 +94,6 @@ die.add(dieSide1, dieSide2, dieSide3, dieSide4, dieSide5, dieSide6);
 // die.rotation.x = Math.PI * 0.5; // Magic
 // die.rotation.x = - Math.PI * 0.5; // Fire
 
-
 scene.add(die);
 
 /**
