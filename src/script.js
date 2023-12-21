@@ -53,7 +53,7 @@ const dieSides = 6;
 const planeGeometry = new THREE.PlaneGeometry(dieWidth, dieWidth)
 
 // Materials
-const material = new THREE.MeshBasicMaterial({ color: '#5A4A46' });
+const floorMaterial = new THREE.MeshBasicMaterial({ color: '#5A4A46', side: THREE.DoubleSide });
 
 // Constructing the die out of individual Planes
 const die = new THREE.Group();
@@ -93,7 +93,7 @@ scene.add(die);
  * Floor
  */
 
-const floor = new THREE.Mesh(new THREE.PlaneGeometry(floorWidth, floorWidth), material);
+const floor = new THREE.Mesh(new THREE.PlaneGeometry(floorWidth, floorWidth), floorMaterial);
 
 floor.position.y = -1;
 floor.rotation.x = - Math.PI * 0.5
