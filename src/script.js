@@ -15,6 +15,19 @@ const canvas = document.querySelector('canvas.webgl')
 const scene = new THREE.Scene()
 
 /**
+ * Textures
+ */
+
+const textureLoader = new THREE.TextureLoader();
+const fireTexture = textureLoader.load('/textures/fire.png');
+const iceTexture = textureLoader.load('/textures/ice.png');
+const shockTexture = textureLoader.load('/textures/earth.png');
+const earthTexture = textureLoader.load('/textures/shock.png');
+const deathTexture = textureLoader.load('/textures/magic.png');
+const magicTetxure = textureLoader.load('/textures/death.png');
+
+
+/**
  * Lights
  */
 const ambientLight = new THREE.AmbientLight(0xffffff, 1.5)
