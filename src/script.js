@@ -24,8 +24,7 @@ const iceTexture = textureLoader.load('/textures/ice.png');
 const shockTexture = textureLoader.load('/textures/earth.png');
 const earthTexture = textureLoader.load('/textures/shock.png');
 const deathTexture = textureLoader.load('/textures/magic.png');
-const magicTetxure = textureLoader.load('/textures/death.png');
-
+const magicTexture = textureLoader.load('/textures/death.png');
 
 /**
  * Lights
@@ -54,17 +53,17 @@ const dieSides = 6;
 const planeGeometry = new THREE.PlaneGeometry(dieWidth, dieWidth)
 
 // Materials
-const material = new THREE.MeshBasicMaterial();
+const material = new THREE.MeshBasicMaterial({ color: '#5A4A46' });
 
 // Constructing the die out of individual Planes
 const die = new THREE.Group();
 
-const dieSide1 = new THREE.Mesh(planeGeometry, new THREE.MeshBasicMaterial({ color: 'red'}));
-const dieSide2 = new THREE.Mesh(planeGeometry, new THREE.MeshBasicMaterial({ color: 'blue'}));
-const dieSide3 = new THREE.Mesh(planeGeometry, new THREE.MeshBasicMaterial({ color: 'green'}));
-const dieSide4 = new THREE.Mesh(planeGeometry, new THREE.MeshBasicMaterial({ color: 'indigo'}));
-const dieSide5 = new THREE.Mesh(planeGeometry, new THREE.MeshBasicMaterial({ color: 'cyan'}));
-const dieSide6 = new THREE.Mesh(planeGeometry, new THREE.MeshBasicMaterial({ color: 'orange'}));
+const dieSide1 = new THREE.Mesh(planeGeometry, new THREE.MeshBasicMaterial({ map: fireTexture}));
+const dieSide2 = new THREE.Mesh(planeGeometry, new THREE.MeshBasicMaterial({ map: iceTexture}));
+const dieSide3 = new THREE.Mesh(planeGeometry, new THREE.MeshBasicMaterial({ map: earthTexture}));
+const dieSide4 = new THREE.Mesh(planeGeometry, new THREE.MeshBasicMaterial({ map: shockTexture}));
+const dieSide5 = new THREE.Mesh(planeGeometry, new THREE.MeshBasicMaterial({ map: magicTexture}));
+const dieSide6 = new THREE.Mesh(planeGeometry, new THREE.MeshBasicMaterial({ map: deathTexture}));
 
 dieSide1.rotation.x = Math.PI * 0.5;
 
